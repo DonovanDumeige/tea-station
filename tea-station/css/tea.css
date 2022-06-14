@@ -1,0 +1,969 @@
+@font-face {
+  font-family: "Catamaran";
+  src: url("../font/Catamaran/static/Catamaran-Regular.ttf");
+}
+@font-face {
+  font-family: "GrandHotel";
+  src: url(../font/Grand_Hotel/GrandHotel-Regular.ttf);
+}
+/* @mixin fontPrim{
+    font-family: Catamaran;
+}
+
+@mixin fontSec{
+    font-family: GrandHotel;
+} */
+/* ********* GENERAL ************ */
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button, body input[type=submit] {
+  background-color: rgb(103, 141, 63);
+  color: white;
+}
+button:hover, body input[type=submit]:hover {
+  color: rgb(103, 141, 63);
+  background-color: #BDEC8B;
+}
+
+/* ******* ANIMATION ****** */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes toleft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes toright {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ******* HEADER ********* */
+header {
+  width: 100vw;
+  height: 80vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../image/main-bcg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*  ******** HEADER-LEFT ************ */
+.header-left #menu:checked ~ nav {
+  background-color: #F1F5F8;
+  transform: translateX(0);
+}
+.header-left .fa-bars {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: rgb(103, 141, 63);
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 1;
+  cursor: pointer;
+  /* animation: bounce 1s linear infinite; */
+}
+.header-left input {
+  display: none;
+}
+.header-left nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100vh;
+  color: #7D93AE;
+  transform: translateX(-100%);
+  transition: all 0.2s linear;
+  z-index: 2;
+}
+.header-left nav ul {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+}
+.header-left nav ul li {
+  list-style-type: none;
+  line-height: 3;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.header-left nav .fa-xmark {
+  position: absolute;
+  top: 1%;
+  left: 85%;
+  color: red;
+  font-size: 2.5rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/*  ******** HEADER-CENTER ************ */
+.header-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+}
+.header-center h3 {
+  color: rgb(103, 141, 63);
+  font-family: GrandHotel;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  /* animation: toleft 3s linear; */
+}
+.header-center h1 {
+  font-family: Catamaran;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3.5rem;
+  /* animation: toright 3s linear; */
+}
+.header-center button {
+  width: 10vw;
+  height: 8vh;
+  outline: 3px solid rgb(103, 141, 63);
+  outline-offset: 4px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  /* animation: show 3s linear; */
+}
+
+/* ************ GRADIENT****************** */
+.gradient {
+  width: 100vw;
+  height: 10px;
+  background-image: linear-gradient(to right, rgb(103, 141, 63), #E7B84A, rgb(103, 141, 63));
+}
+
+/* ************ MAIN SECTION ************* */
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* ***********ARGUMENTS **************** */
+}
+.main .arguments {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+  gap: 15px;
+  padding-top: 15px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  background-color: #F1F5F8;
+}
+.main .arguments .argument {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 100%;
+  gap: 10px;
+  transition: all 0.2s linear;
+}
+.main .arguments .argument:hover {
+  background-color: white;
+  box-shadow: 0 2px rgb(103, 141, 63);
+}
+.main .arguments .argument:hover i {
+  transform: translateY(-5px);
+}
+.main .arguments .argument h3 {
+  font-family: Catamaran;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+.main .arguments .argument i {
+  font-size: 2rem;
+  color: rgb(103, 141, 63);
+}
+.main .arguments .argument p {
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  text-align: center;
+  color: #7D93AE;
+}
+
+/* ************* FIN ARGUMENTS ************ */
+/* ********** MAIN PRODUCT ********** */
+.main-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 75vw;
+  height: 65vh;
+  margin-top: 6%;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  gap: 35px;
+}
+.main-product .main-image {
+  width: 45%;
+  height: fit-content;
+  background-color: rgb(103, 141, 63);
+  border: 10px solid rgb(103, 141, 63);
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+.main-product .main-image:hover img {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+.main-product .main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-product .main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  width: 40%;
+  height: 100%;
+}
+.main-product .main-text h3 {
+  font-family: GrandHotel;
+  font-size: 2.1rem;
+  letter-spacing: 6px;
+  color: rgb(103, 141, 63);
+}
+.main-product .main-text h2 {
+  font-family: Catamaran;
+  font-size: 2.6rem;
+}
+.main-product .main-text p {
+  color: #7D93AE;
+  font-family: Catamaran;
+  line-height: 1.5;
+}
+.main-product .main-text button {
+  width: 8vw;
+  height: 5vh;
+  margin-top: 15px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* *** FIN SECTION MAIN *** */
+/* *********** OUR PRODUCT ************* */
+.our-product {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  background-color: #F1F5F8;
+}
+.our-product .main-text {
+  width: 25%;
+  height: 100%;
+  margin-top: 40px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 80px;
+}
+.our-product .main-text h3 {
+  font-family: GrandHotel;
+  font-size: 2.1rem;
+  letter-spacing: 6px;
+  color: rgb(103, 141, 63);
+}
+.our-product .main-text h2 {
+  font-family: Catamaran;
+  font-size: 2.6rem;
+}
+.our-product .main-text p {
+  color: #7D93AE;
+  font-family: Catamaran;
+  line-height: 1.5;
+}
+.our-product button {
+  width: 8vw;
+  height: 5vh;
+  margin-top: 15px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.our-product .products-library {
+  width: 75%;
+  height: 90%;
+  margin-top: 40px;
+  margin-right: 0;
+  margin-bottom: 40px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 35px;
+  /* *** PRODUCT *** */
+}
+.our-product .products-library .product {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  /* * IMAGE * */
+  /* * TEXTE * */
+}
+.our-product .products-library .product .product-image {
+  width: 100%;
+  height: 70%;
+}
+.our-product .products-library .product .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.our-product .products-library .product .product-info {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.our-product .products-library .product .product-info h3, .our-product .products-library .product .product-info p {
+  font-family: Catamaran;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 1rem;
+}
+.our-product .products-library .product .product-info p {
+  color: rgb(103, 141, 63);
+}
+
+/* *********** FIN OUR PRODUCT ********* */
+/* ********* OUR SERVICES ********** */
+.our-services {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.our-services .title {
+  margin-top: 5vh;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.our-services .title h3, .our-services .title h2 {
+  text-align: center;
+}
+.our-services .title h3 {
+  font-family: GrandHotel;
+  font-size: 2.1rem;
+  letter-spacing: 6px;
+  color: rgb(103, 141, 63);
+}
+.our-services .title h2 {
+  font-family: Catamaran;
+  font-size: 2.6rem;
+}
+.our-services .services {
+  width: 75vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  gap: 3rem;
+}
+.our-services .services .service {
+  width: 25vw;
+  height: 90%;
+  gap: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s linear;
+  /* ** IMAGE ** */
+  /* ** TEXTE ** */
+}
+.our-services .services .service:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+.our-services .services .service:nth-of-type(3) .service-image span i {
+  left: 2%;
+}
+.our-services .services .service .service-image {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.our-services .services .service .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.our-services .services .service .service-image span {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  padding-top: 14px;
+  padding-right: 14px;
+  padding-bottom: 14px;
+  padding-left: 14px;
+  display: block;
+  background-color: #BDEC8B;
+  border-radius: 50%;
+  text-align: center;
+  border: 6px solid #F1F5F8;
+}
+.our-services .services .service .service-image span i {
+  position: relative;
+  top: -10%;
+  left: -10%;
+  font-size: 1.7rem;
+  color: rgb(103, 141, 63);
+}
+.our-services .services .service .service-text {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-top: 25px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  background-color: #F1F5F8;
+}
+.our-services .services .service .service-text h3 {
+  text-align: center;
+}
+.our-services .services .service .service-text p {
+  font-family: Catamaran;
+  text-align: center;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+}
+.our-services .services .service .service-text button {
+  width: 35%;
+  height: 20vh;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 15px;
+  margin-left: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ***********FIN OUR SERVICES ************* */
+/* ***************CONTACT & FOOTER ************* */
+.contact-foot {
+  width: 100vw;
+  height: 100vh;
+  /* *************** BLOC CONTACT **************** */
+  /* ***************** FOOTER ******************* */
+}
+.contact-foot .bloc-contact {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5rem;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  background-color: #F1F5F8;
+  /* ***CONTACT-INFO */
+  /* ***CONTACT-FORM */
+}
+.contact-foot .bloc-contact .contact-info {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  gap: 10px;
+}
+.contact-foot .bloc-contact .contact-info p {
+  line-height: 1.5;
+  font-family: Catamaran;
+  color: rgb(103, 141, 63);
+  letter-spacing: 2px;
+}
+.contact-foot .bloc-contact .contact-info p + p {
+  font-weight: bold;
+  color: black;
+}
+.contact-foot .bloc-contact .contact-info span i {
+  font-size: 1.3rem;
+}
+.contact-foot .bloc-contact .contact-form {
+  width: 70%;
+  height: 80%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #7D93AE;
+  font-family: Catamaran;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+.contact-foot .bloc-contact .contact-form fieldset {
+  width: 60%;
+  height: 100%;
+  padding-top: 15px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 15%;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow-x: hidden;
+}
+.contact-foot .bloc-contact .contact-form input, .contact-foot .bloc-contact .contact-form textarea {
+  width: 95%;
+  height: 100%;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-family: Catamaran;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contact-foot .bloc-contact .contact-form input[type=text], .contact-foot .bloc-contact .contact-form input[type=email], .contact-foot .bloc-contact .contact-form textarea {
+  background-color: #F1F5F8;
+}
+.contact-foot .bloc-contact .contact-form input[type=text], .contact-foot .bloc-contact .contact-form input[type=email] {
+  width: 95%;
+  height: 100px;
+}
+.contact-foot .bloc-contact .contact-form input[type=submit] {
+  width: 100%;
+  height: 150px;
+  border-radius: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact-foot footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #272727;
+}
+.contact-foot footer .social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+}
+.contact-foot footer .social-icons i {
+  color: white;
+  font-size: 1.5rem;
+}
+.contact-foot footer .legal-text {
+  color: white;
+  font-family: Catamaran;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.contact-foot footer .legal-text span {
+  color: rgb(103, 141, 63);
+}
+
+/* *** SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ***LEGAL TEXT */
+.legal-text {
+  color: white;
+  font-family: Catamaran;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.legal-text span {
+  color: var(--MainColor);
+}
+
+/* *******RESPONSIVE : TABLETTE ******* */
+@media screen and (max-width: 900px) {
+  /* *** HEADER *** */
+  .header-center button {
+    width: 15vw;
+  }
+  .header-left .fa-bars {
+    position: fixed;
+  }
+  .header-left nav {
+    width: 40vw;
+    max-width: 25rem;
+  }
+  /* *** SECTION MAIN *** */
+  .main .arguments {
+    height: 50vh;
+    flex-wrap: wrap;
+  }
+  .main .arguments .argument {
+    width: 47vw;
+    height: 50%;
+    padding: 5px 0;
+  }
+  .main .main-product {
+    flex-direction: column;
+    height: 125vh;
+  }
+  .main .main-product .main-image {
+    width: 70%;
+  }
+  .main .main-product .main-text {
+    width: 55%;
+    margin-top: 15px;
+  }
+  .main .main-product .main-text h3 {
+    font-size: 2.5rem;
+  }
+  .main .main-product .main-text h2 {
+    font-size: 3.5rem;
+  }
+  .main .main-product .main-text button {
+    width: 13vw;
+    height: 7vh;
+  }
+  /* *** SECTION PRODUITS *** */
+  .our-product {
+    flex-direction: column;
+    height: 200vh;
+  }
+  .our-product .products-library {
+    width: 95%;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .our-product .products-library .product {
+    width: 45vw;
+    padding: 0 3rem;
+  }
+  .our-product .products-library .product:nth-of-type(1) {
+    padding-right: 1.5rem;
+  }
+  .our-product .products-library .product:nth-of-type(2) {
+    padding-left: 1.5rem;
+  }
+  /* *** SECTION SERVICES *** */
+  .our-services {
+    height: 210vh;
+    /* *** SECTION CONTACT & FOOTER */
+    /* ** BLOC CONTACT ** */
+    /* ** FOOTER ** */
+  }
+  .our-services .services {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  .our-services .services .service {
+    width: 42vw;
+    height: 90%;
+  }
+  .our-services .services .service button {
+    height: 6vh;
+  }
+  .our-services .contact-foot {
+    height: 150vh;
+  }
+  .our-services .bloc-contact {
+    flex-direction: column;
+    padding-top: 3rem;
+    height: 85%;
+  }
+  .our-services .contact-info {
+    height: 40%;
+    margin: 0;
+    padding-left: 3rem;
+  }
+  .our-services .contact-form {
+    width: 100%;
+    height: 60%;
+    margin: 0 0 3rem;
+    padding-left: 3rem;
+  }
+  .our-services .contact-form fieldset {
+    width: 70%;
+    right: 25%;
+    top: 5%;
+  }
+  .our-services footer {
+    margin: 0;
+    height: 15%;
+    gap: 15px;
+  }
+}
+/* *******RESPONSIVE : MOBILE ******* */
+@media screen and (max-width: 500px) {
+  /* **** HEADER **** */
+  header .header-left label i {
+    font-size: 2.6rem;
+  }
+  header .header-left nav {
+    width: 50vw;
+  }
+  header .header-center h3 {
+    font-size: 2.4rem;
+    /* animation-duration: 2s; */
+  }
+  header .header-center h1 {
+    font-size: 3rem;
+    /* animation-duration: 2s; */
+  }
+  header .header-center button {
+    width: 25vw;
+  }
+  /* **** SECTION MAIN **** */
+  /* *** ARGUMENTS *** */
+
+  .main .arguments {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  .main .arguments .argument {
+    width: 95%;
+    height: 25%;
+  }
+  .main .main-product {
+    height: 170vh;
+  }
+  .main .main-product .main-image,
+.main .main-product .main-text {
+    width: 95%;
+  }
+  .main .main-product .main-text button {
+    width: 22vw;
+    height: 8vh;
+  }
+  /* **** SECTION PRODUCTS **** */
+  .our-product {
+    align-items: center;
+    height: 280vh;
+  }
+  .our-product .title,
+.our-product .main-text {
+    width: 95%;
+  }
+  .our-product .main-text {
+    margin: 0;
+    padding: 30px 50px;
+  }
+  .our-product .products-library {
+    align-items: center;
+    width: 85%;
+  }
+  .our-product .products-library .product {
+    width: 100%;
+    padding: 0;
+  }
+  .our-product .products-library .product:nth-of-type(1) {
+    padding-right: 0;
+  }
+  .our-product .products-library .product:nth-of-type(2) {
+    padding-left: 0;
+  }
+  /* **** SECTION SERVICES **** */
+  .our-services {
+    height: 300vh;
+  }
+  .our-services title {
+    padding: 30px 50px;
+  }
+  .our-services .services {
+    width: 85%;
+    margin: 0;
+  }
+  .our-services .services .service {
+    width: 100%;
+  }
+  /* **** SECTION CONTACT & FOOTER **** */
+  .contact-foot {
+    height: 200vh;
+    /* *** BLOC CONTACT *** */
+    /* *** FOOTER *** */
+  }
+  .contact-foot .bloc-contact {
+    height: 93%;
+  }
+  .contact-foot .bloc-contact .contact-info {
+    width: 95%;
+    height: 20%;
+  }
+  .contact-foot .bloc-contact .contact-form {
+    height: 80%;
+  }
+  .contact-foot .bloc-contact .contact-form fieldset {
+    width: 90%;
+    right: 5%;
+  }
+  .contact-foot footer {
+    height: 7%;
+  }
+  .contact-foot footer .social-icons i {
+    font-size: 1rem;
+  }
+  .contact-foot footer .legal-text p {
+    font-size: 0.8rem;
+  }
+}
+@font-face {
+  font-family: "Catamaran";
+  src: url("./font/Catamaran/static/Catamaran-Regular.ttf");
+}
+@font-face {
+  font-family: "Grand-Hotel";
+  src: url(./font/Grand_Hotel/GrandHotel-Regular.ttf);
+}
+
+/*# sourceMappingURL=tea.css.map */

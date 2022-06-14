@@ -1,0 +1,317 @@
+//! 10.06 / 00h45 / A retravailler avec la syntaxe SaSS
+/* *******RESPONSIVE : TABLETTE ******* */
+
+@media screen and (max-width:900px) {
+
+    /* *** HEADER *** */
+    .header-center button {
+        width: 15vw;
+    }
+
+    .header-left {
+        .fa-bars {
+            position: fixed;
+        }
+
+        nav {
+            width: 40vw;
+            max-width: 25rem;
+        }
+    }
+
+    /* *** SECTION MAIN *** */
+    .main {
+        .arguments {
+            height: 50vh;
+            flex-wrap: wrap;
+
+            .argument {
+                width: 47vw;
+                height: 50%;
+                padding: 5px 0;
+            }
+        }
+
+        .main-product {
+            flex-direction: column;
+            height: 125vh;
+
+            .main-image {
+                width: 70%;
+            }
+
+            .main-text {
+                width: 55%;
+                margin-top: 15px;
+
+                h3 {
+                    font-size: 2.5rem;
+                }
+
+                h2 {
+                    font-size: 3.5rem;
+                }
+
+                button {
+                    width: 13vw;
+                    height: 7vh;
+                }
+
+            }
+        }
+    }
+
+    /* *** SECTION PRODUITS *** */
+    .our-product {
+        flex-direction: column;
+        height: 200vh;
+
+        .products-library {
+            width: 95%;
+            flex-wrap: wrap;
+            margin: 0;
+
+            .product {
+                width: 45vw;
+                padding: 0 3rem;
+
+                &:nth-of-type(1) {
+                    padding-right: 1.5rem;
+                }
+
+                &:nth-of-type(2) {
+                    padding-left: 1.5rem;
+                }
+            }
+        }
+    }
+
+    /* *** SECTION SERVICES *** */
+    .our-services {
+        height: 210vh;
+
+        .services {
+            width: 90%;
+            flex-wrap: wrap;
+
+            .service {
+                width: 42vw;
+                height: 90%;
+
+                button {
+                    height: 6vh;
+                }
+            }
+        }
+
+        /* *** SECTION CONTACT & FOOTER */
+
+        .contact-foot {
+            height: 150vh;
+        }
+
+        /* ** BLOC CONTACT ** */
+        .bloc-contact {
+            flex-direction: column;
+            padding-top: 3rem;
+            height: 85%
+        }
+
+        .contact-info {
+            height: 40%;
+            margin: 0;
+            padding-left: 3rem;
+        }
+
+        .contact-form {
+            width: 100%;
+            height: 60%;
+            margin: 0 0 3rem;
+            padding-left: 3rem;
+        }
+
+        .contact-form fieldset {
+            width: 70%;
+            right: 25%;
+            top: 5%;
+        }
+
+        /* ** FOOTER ** */
+        footer {
+            margin: 0;
+            height: 15%;
+            gap: 15px;
+        }
+    }
+}
+
+/* *******RESPONSIVE : MOBILE ******* */
+@media screen and (max-width:500px) {
+
+    /* **** HEADER **** */
+
+    header {
+        .header-left {
+            label {
+                i {
+                    font-size: 2.6rem;
+                }
+            }
+
+            nav {
+                width: 50vw;
+            }
+        }
+
+        .header-center {
+            h3 {
+                font-size: 2.4rem;
+                /* animation-duration: 2s; */
+            }
+
+            h1 {
+                font-size: 3rem;
+                /* animation-duration: 2s; */
+            }
+
+            button {
+                width: 25vw;
+            }
+        }
+    }
+
+    /* **** SECTION MAIN **** */
+    /* *** ARGUMENTS *** */
+    .main {
+        .arguments {
+            display: block;
+            width: 100%;
+            height: 100vh;
+
+            .argument {
+                width: 95%;
+                height: 25%;
+            }
+        }
+
+        /* *** MAIN PRODUCT *** */
+
+        .main-product {
+            height: 170vh;
+
+            .main-image,
+            .main-text {
+                width: 95%;
+
+            }
+
+            .main-text {
+                button {
+                    width: 22vw;
+                    height: 8vh;
+                }
+            }
+        }
+
+    }
+
+    /* **** SECTION PRODUCTS **** */
+
+    .our-product {
+        align-items: center;
+        height: 280vh;
+
+        .title,
+        .main-text {
+            width: 95%;
+        }
+
+        .main-text {
+            margin: 0;
+            padding: 30px 50px;
+        }
+
+        .products-library {
+            align-items: center;
+            width: 85%;
+
+
+            .product {
+                width: 100%;
+                padding: 0;
+
+                &:nth-of-type(1) {
+                    padding-right: 0;
+                }
+
+                &:nth-of-type(2) {
+                    padding-left: 0;
+                }
+            }
+
+        }
+    }
+
+
+    /* **** SECTION SERVICES **** */
+
+    .our-services {
+        height: 300vh;
+
+        title {
+            padding: 30px 50px;
+        }
+
+        .services {
+            width: 85%;
+            margin: 0;
+
+            .service {
+                width: 100%;
+            }
+        }
+
+    }
+
+
+    /* **** SECTION CONTACT & FOOTER **** */
+    .contact-foot {
+        height: 200vh;
+
+        /* *** BLOC CONTACT *** */
+        .bloc-contact {
+            height: 93%;
+
+            .contact-info {
+                width: 95%;
+                height: 20%;
+            }
+
+            .contact-form {
+                height: 80%;
+
+                fieldset {
+                    width: 90%;
+                    right: 5%;
+                }
+            }
+        }
+
+        /* *** FOOTER *** */
+        footer {
+            height: 7%;
+
+            .social-icons {
+                i {
+                    font-size: 1rem;
+                }
+            }
+
+            .legal-text {
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

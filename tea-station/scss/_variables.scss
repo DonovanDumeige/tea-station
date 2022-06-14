@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Catamaran";
+    src: url("../font/Catamaran/static/Catamaran-Regular.ttf");
+}
+
+@font-face{
+    font-family: "GrandHotel";
+    src: url(../font/Grand_Hotel/GrandHotel-Regular.ttf);
+}
+
+$mainColor:rgb(103,141,63);
+$secondColor:#7D93AE;
+$bgColor: #F1F5F8;
+$bgColor2:#BDEC8B;
+$transition : all 0.2s linear;
+$fontPrim: Catamaran;
+$fontSec:GrandHotel;
+
+/* @mixin fontPrim{
+    font-family: Catamaran;
+}
+
+@mixin fontSec{
+    font-family: GrandHotel;
+} */
+
+@mixin flex ($direction:row, $al-prim:center, $al-sec:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $al-prim;
+    align-items: $al-sec;
+}
+@mixin reset{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+@mixin size($w:100%, $h:100%){
+    width:$w;
+    height:$h;
+}
+@mixin absol ($top:50%, $left:50%, $tr1:-50%, $tr2:-50%){
+    position:absolute;
+    top:$top;
+    left:$left;
+    transform: translate($tr1, $tr2);
+}
+
+@mixin pos ($pos:static, $top:0, $left:0){
+    position: $pos;
+    top:$top;
+    left:$left;
+}
+@mixin gap($gap){
+    gap:$gap;
+}
+
+@mixin padding($pad-t:0, $pad-r:0, $pad-b:0,$pad-l:0){
+    padding-top:$pad-t;
+    padding-right:$pad-r;
+    padding-bottom: $pad-b;
+    padding-left: $pad-l;
+}
+
+@mixin margin($marg-t:0, $marg-r:0, $marg-b:0,$marg-l:0){
+    margin-top:$marg-t;
+    margin-right:$marg-r;
+    margin-bottom: $marg-b;
+    margin-left: $marg-l;
+}
+
+@mixin h3{
+    font-family: $fontSec;
+    font-size:2.1rem;
+    letter-spacing: 6px;
+    color: $mainColor;
+}
+
+@mixin h2{
+    font-family: $fontPrim;
+    font-size:2.6rem;
+}
+
+/* ********* GENERAL ************ */
+
+*, ::before, ::after{
+    @include reset;
+}
+
+button, body input[type="submit"]{
+    background-color: $mainColor;
+    color:white;
+    &:hover{
+        color: $mainColor;
+        background-color: $bgColor2;
+    }
+}
+

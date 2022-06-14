@@ -1,0 +1,124 @@
+@use "variables" as v;
+
+/* ***************CONTACT & FOOTER ************* */
+.contact-foot{
+    @include v.size(100vw,100vh);
+    /* *************** BLOC CONTACT **************** */
+    .bloc-contact{
+        @include v.size(100%,80%);
+        @include v.flex($al-prim:flex-start, $al-sec:flex-start);
+        @include v.margin($marg-t:5rem);
+        background-color: v.$bgColor;
+        /* ***CONTACT-INFO */
+        .contact-info{
+            @include v.size(25%,100%);
+            @include v.flex ($direction:column, $al-prim:flex-start, $al-sec:flex-start);
+            @include v.margin (4rem,4rem,4rem,4rem);
+            @include v.gap(10px);
+            p{
+                line-height:1.5;
+                font-family: v.$fontPrim;
+                color: v.$mainColor;
+                letter-spacing: 2px;
+            }
+            p + p{
+                font-weight: bold;
+                color: black;
+            }
+            span{
+                i{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        /* ***CONTACT-FORM */
+        .contact-form{
+            @include v.size(70%,80%);
+            @include v.pos($pos:relative);
+            @include v.margin(4rem, 2rem,0,0);
+            color: v.$secondColor;
+            font-family: v.$fontPrim;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            fieldset{
+                @include v.size(60%,100%);
+                @include v.padding($pad-t:15px);
+                @include v.flex($direction:column,$al-prim:flex-start);
+                @include v.gap(20px);
+                @include v.pos($pos:absolute);
+                right:15%;
+                background-color: white;
+                border: 1px solid transparent;
+                border-radius: 10px;
+                overflow-x: hidden;
+            }
+            input, textarea{
+                @include v.size($w:95%);
+                @include v.padding(15px,15px,15px,15px);
+                font-family: v.$fontPrim; 
+                border: 1px solid transparent;
+                border-radius: 5px;
+                font-size:1rem;
+            }
+            input[type="text"],input[type="email"], textarea{
+                background-color: v.$bgColor;
+            }
+            input[type="text"],input[type="email"]{
+                @include v.size(95%,100px);
+            }
+            input[type="submit"]{
+                @include v.size(100%,150px);
+                border-radius: 0;
+                font-size:1.1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+    }
+    /* ***************** FOOTER ******************* */
+    footer{
+        @include v.size(100%,20%);
+        @include v.flex ($direction:column);
+        @include v.gap(20px);
+        background-color: #272727;
+        .social-icons{
+            @include v.flex($al-prim:flex-start, $al-sec:flex-start);
+            @include v.gap (15px);
+            i{
+                color:white;
+                font-size: 1.5rem;
+            }
+        }
+        .legal-text{
+            color:white;
+            font-family: Catamaran;
+            letter-spacing:2px;
+            text-transform: uppercase;
+            span{
+                color:v.$mainColor;
+            }
+        }
+    }
+}
+
+/* *** SOCIAL ICONS */
+.social-icons{
+    display: flex;
+    gap:15px;
+}
+
+.social-icons i{
+    color:white;
+    font-size:1.5rem;
+}
+/* ***LEGAL TEXT */
+.legal-text{
+    color:white;
+    font-family: Catamaran;
+    letter-spacing:2px;
+    text-transform: uppercase;
+}
+
+.legal-text span{
+    color: var(--MainColor);
+}

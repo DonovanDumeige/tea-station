@@ -1,0 +1,68 @@
+/* ******* ANIMATION ****** */
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }  
+    50%{
+        transform: scale(1.5);
+    }   
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes toleft {
+    0% {
+        transform:translateX(-1000px);
+        opacity: 0;
+    }
+
+    50%{
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+
+    75%{
+        transform: translateX(-50px);
+        opacity: 0.75;
+    }    
+
+    100% {
+        transform:translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toright {
+    0% {
+        transform:translateX(1000px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-200px);
+        opacity: 0.5;  
+    }
+    75%{
+        transform: translateX(50px);
+        opacity: 0.75;
+    }
+    100% {
+        transform:translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+        transform:scale(1.2);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(1.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,97 @@
+@use "variables" as v;
+/* ******* HEADER ********* */
+
+header{
+    @include v.size(100vw, 80vh);
+    background-image: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../image/main-bcg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*  ******** HEADER-LEFT ************ */
+
+.header-left{
+    #menu{
+        &:checked ~ nav{
+            background-color: v.$bgColor;
+            transform: translateX(0);
+        }    
+        }
+    .fa-bars{
+        @include v.pos(absolute, 5%, 5%);
+        color: v.$mainColor;
+        font-size: 2.5rem;
+        font-weight: bold;
+        z-index: 1;
+        cursor: pointer;
+        /* animation: bounce 1s linear infinite; */
+    }
+    input{
+        display:none;
+    }
+    nav{
+        @include v.pos(fixed,0,0);
+        @include v.size(35%, 100vh);
+        color:v.$secondColor;
+        transform: translateX(-100%);
+        transition: v.$transition;
+        z-index: 2;
+        ul{
+            @include v.padding($pad-l:20px);
+            li{
+                list-style-type: none;
+                line-height: 3;
+                @include v.padding(15px,15px,15px,15px);
+            }
+        }
+        .fa-xmark{
+            @include v.pos(absolute,1%,85%);
+            color:red;
+            font-size:2.5rem;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+}
+
+/*  ******** HEADER-CENTER ************ */
+
+.header-center{
+    @include v.flex($direction:column);
+    @include v.size(100%, 100%);
+    @include v.gap(5px);
+    h3{
+        color: v.$mainColor;
+        font-family: v.$fontSec;
+        font-size: 3rem;;
+        letter-spacing:2px;
+        /* animation: toleft 3s linear; */
+    }
+    h1{
+        font-family: v.$fontPrim;
+        color:white;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size:3.5rem;
+        /* animation: toright 3s linear; */
+    }
+    button{
+        @include v.size(10vw, 8vh);
+        outline: 3px solid v.$mainColor;
+        outline-offset: 4px;
+        text-transform: uppercase;
+        font-size:1rem;
+        cursor:pointer;
+        /* animation: show 3s linear; */
+    }
+}
+
+/* ************ GRADIENT****************** */
+
+.gradient{
+    @include v.size(100vw, 10px);
+    background-image: linear-gradient(to right, rgb(103,141,63), #E7B84A,rgb(103,141,63));
+}

@@ -1,0 +1,91 @@
+@use "variables" as v;
+
+/* ********* OUR SERVICES ********** */
+
+.our-services{
+    @include v.size (100vw,100vh);
+    @include v.flex ($direction:column, $al-prim:flex-start);
+    @include v.gap (30px);
+    .title{
+        @include v.margin($marg-t:5vh);
+        h3,h2{
+            text-align:center;
+        }
+        h3{
+            @include v.h3();
+        }
+        h2{
+            @include v.h2();
+        }
+    }
+    .services{
+        @include v.size(75vw,95vh);
+        @include v.flex($al-prim:flex-start, $al-sec:flex-start);
+        @include v.margin(3rem, auto, 3rem, auto);
+        @include v.gap(3rem);
+        .service{
+            @include v.size(25vw,90%);
+            @include v.gap(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: v.$transition;
+            &:hover{
+                box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+                transform:scale(1.02);
+            }
+            &:nth-of-type(3) .service-image span i{
+                left:2%;
+            }
+            /* ** IMAGE ** */
+            .service-image{
+                @include v.size(100%,60%);
+                @include v.flex ($direction:column, $al-prim:flex-start);
+                @include v.pos ($pos:relative);
+                img{
+                    @include v.size ();
+                    object-fit: cover;
+                }
+                span{
+                    @include v.size(65px,65px);
+                    @include v.pos (absolute, 85%, 40%);
+                    @include v.padding  (14px, 14px, 14px, 14px);
+                    display: block;
+                    background-color: v.$bgColor2;
+                    border-radius: 50%;
+                    text-align: center;
+                    border:6px solid v.$bgColor;
+                    i{
+                        @include v.pos(relative,-10%,-10%);
+                        font-size:1.7rem;
+                        color: v.$mainColor;
+                    }
+                }
+            }
+            /* ** TEXTE ** */
+            .service-text{
+                @include v.size($h:40%);
+                @include v.flex($direction:column, $al-prim:flex-start);
+                @include v.gap(10px);
+                @include v.padding($pad-t:25px);
+                background-color: v.$bgColor;
+                h3{
+                    text-align: center;
+                }
+                p{
+                    font-family: v.$fontPrim;
+                    text-align: center;
+                    @include v.padding(0,5px,0,5px);
+                }
+                button{
+                    @include v.size(35%,20vh);
+                    @include v.margin($marg-b:15px);
+                    border:1px solid transparent;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+        }     
+    }
+}
+
+/* ***********FIN OUR SERVICES ************* */

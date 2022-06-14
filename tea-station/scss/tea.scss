@@ -1,0 +1,18 @@
+@use "variables";
+@use "animations";
+@use "header";
+@use "main";
+@use "products";
+@use "services";
+@use "contact";
+@use "responsive";
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("./font/Catamaran/static/Catamaran-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Grand-Hotel";
+    src: url(./font/Grand_Hotel/GrandHotel-Regular.ttf);
+}

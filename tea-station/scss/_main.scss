@@ -1,0 +1,99 @@
+@use "variables" as v;
+
+
+/* ************ MAIN SECTION ************* */
+
+.main{
+    @include v.size(100vw, 100vh);
+    @include v.flex(column, flex-start, flex-start);
+
+/* ***********ARGUMENTS **************** */
+
+    .arguments{
+        @include v.flex($al-prim:flex-start);
+        @include v.size ($h:35vh);
+        @include v.gap (15px);
+        @include v.padding (15px);
+        background-color: v.$bgColor;
+        .argument{
+            @include v.flex($direction:column);
+            @include v.size(25vw,100%);
+            @include v.gap(10px);
+            transition: v.$transition;
+            &:hover{
+                background-color: white;
+                box-shadow: 0 2px v.$mainColor;
+                i{
+                    transform: translateY(-5px);
+                }
+            }
+            h3{
+                font-family: v.$fontPrim;
+                font-weight: bold;
+                letter-spacing: 6px;
+            }
+            i{
+                font-size: 2rem;
+                color: v.$mainColor;
+            }
+            p{
+                @include v.padding(0,5px,0,5px);
+                text-align: center;
+                color: v.$secondColor;
+            }
+        }
+    }
+}
+/* ************* FIN ARGUMENTS ************ */
+
+/* ********** MAIN PRODUCT ********** */
+.main-product{
+    @include v.flex($al-prim:flex-start, $al-sec:flex-start);
+    @include v.size (75vw,65vh);
+    @include v.margin (6%, auto, 0, auto);
+    @include v.gap (35px);
+    .main-image{
+        @include v.size(45%,fit-content);
+        background-color: v.$mainColor;
+        border: 10px solid v.$mainColor;
+        overflow: hidden;
+        transition: v.$transition;
+        &:hover{
+            img{
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+        img{
+            @include v.size(100%,100%);
+            object-fit: cover;
+        }
+    }
+    .main-text{
+        @include v.flex($direction:column, $al-prim:flex-start, $al-sec:flex-start);
+        @include v.gap(5px);
+        @include v.size($w:40%);
+        h3{
+            @include v.h3();
+        }
+        h2{
+            @include v.h2();
+        }
+        p{
+            color: v.$secondColor;
+            font-family: v.$fontPrim;
+            line-height:1.5;
+        }
+        button{
+            @include v.size(8vw,5vh);
+            @include v.margin ($marg-t:15px);
+            text-align:center;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+    }
+
+}
+
+/* *** FIN SECTION MAIN *** */

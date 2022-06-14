@@ -1,0 +1,71 @@
+@use "variables" as v;
+
+/* *********** OUR PRODUCT ************* */
+
+.our-product{
+    @include v.size($h:60vh);
+    @include v.flex ($al-prim:flex-start, $al-sec:flex-start);
+    @include v.gap(50px);
+    background-color: v.$bgColor;
+    .main-text{
+        @include v.size(25%, 100%);
+        @include v.margin(40px,0,0,80px);
+        h3{
+            @include v.h3();
+        }
+        h2{
+            @include v.h2();
+        }
+        p{
+            color: v.$secondColor;
+            font-family: v.$fontPrim;
+            line-height: 1.5;
+        }
+        }
+        button{
+            @include v.size(8vw,5vh);
+            @include v.margin ($marg-t:15px);
+            text-align:center;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+    .products-library{
+        @include v.size(75%,90%);
+        @include v.margin(40px,0,40px,0);
+        @include v.flex ($al-prim:flex-start, $al-sec:flex-start);
+        @include v.gap(35px);
+/* *** PRODUCT *** */
+        .product{
+            @include v.size($w:25%);
+            @include v.flex ($direction:column, $al-prim:flex-start, $al-sec:flex-start);
+            @include v.gap(15px);
+/* * IMAGE * */
+            .product-image{
+                @include v.size($h:70%);
+                img{
+                    @include v.size(100%,100%);
+                    object-fit: cover;
+                    border-radius: 30px;
+                }
+            }
+ /* * TEXTE * */
+            .product-info{
+                @include v.size($h:30%);
+                @include v.flex($direction:column, $al-prim:flex-start, $al-sec:flex-start);
+                @include v.gap(10px);
+                h3, p{
+                    font-family: v.$fontPrim;
+                    font-weight: bold;
+                    letter-spacing: 5px;
+                    font-size:1rem;
+                }
+                p{
+                    color: v.$mainColor;
+                }
+            }
+        }
+    }
+}
+
+/* *********** FIN OUR PRODUCT ********* */
